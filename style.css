@@ -15,25 +15,40 @@ h1 {
 
 .canvas {
     display: grid;
-    height: 50vw;
-    width: 50vw;
+    height: 35vw;
+    width: 35vw;
     background-color: white;
-    border: 10px solid black;
+    border: 10px ridge;
 }
 
 .pixel {
     height: auto;
     width: auto;
-    border: 1px white inset;
-    background-color: rgb(200, 200, 200);
+    border: 1px white solid;
+    background-color: rgb(240, 240, 240);
 }
 
-.pixel:hover {
+/* TODO: This triggers the window.getComputedStyle(pixel).backgroundColor; */
+/* Should this be removed? */
+/* .pixel:hover {
     background-color: rgb(100, 100, 100);
-}
+} */
 
+/* Remove me */
 .pixel--set {
     background-color: black;
+}
+
+.pixel--solid {
+    background-color: rgb(0, 0, 0);
+}
+
+.pixel--grayscale {
+    background-color: rgb(232, 232, 232);
+}
+
+.pixel--rainbow {
+    background-color:rgb(238, 130, 238);
 }
 
 .control {
@@ -42,10 +57,15 @@ h1 {
     border: 1px solid blue;
 }
 
-.control__screen-size {
-    background: #d3d3d3;
+.control__canvas-pixel-density {
+    background: #f1f1f1;
     outline: none;
     opacity: 0.7;
     -webkit-transition: .5s;
     transition: opacity .2s;
 }
+
+/* TODO: Remove the brush--types */
+/* .control__brush--solid { background-color: black; } */
+/* .control__brush--grayscale { background-color: rgb(250, 250, 250); } */
+/* .control__brush--rainbow { background-color: yellow; } */

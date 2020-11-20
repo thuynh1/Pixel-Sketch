@@ -8,8 +8,20 @@
 <body>
     <h1>Etch-a-Sketch</h1>
     <div class="control">
-        <label for="control__screen-size">Pixel size</label>
-        <input class="control__screen-size" type="range" min="16" max="50" value="16">
+        <!-- TODO: change class name to canvas instead of screen -->
+        <label for="control__canvas-pixel-density">Pixel density</label>
+        <input class="control__canvas-pixel-density" type="range" min="16" max="100" value="16">
+        <p class="control__canvas-pixel-value">16</p>
+        <button class="control__canvas-clear">Reset</button>
+        <form>
+            <p>Brush settings:</p>
+            <input type="radio" class="control__brush" name="brush" value="solid" checked>
+            <label for="solid">Solid</label><br>
+            <input type="radio" class="control__brush" name="brush" value="grayscale">
+            <label for="grayscale">Grayscale</label><br>
+            <input type="radio" class="control__brush" name="brush" value="rainbow">
+            <label for="rainbow">Rainbow</label>
+        </form>
     </div>
     <div class="canvas">
         <!-- Dynamically generate grid of 16x16 (default) pixels -->
