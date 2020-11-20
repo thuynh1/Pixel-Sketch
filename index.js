@@ -94,8 +94,8 @@ function setPixelStyle(event) {
     if (currentStyle === undefined) {
         pixel.classList.add(setting);
     } else if (currentStyle !== setting) {
-        pixel.target.classList.remove(currentStyle);
-        pixel.target.classList.add(sxetting);
+        pixel.classList.remove(currentStyle);
+        pixel.classList.add(setting);
     }
     pixel.style.backgroundColor = colorSchemeHandler(pixel);
 }
