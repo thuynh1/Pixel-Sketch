@@ -5,12 +5,12 @@ let brushSetting = "solid";
 let setting = `pixel--${brushSetting}`;
 const rainbowColors = [
     "rgb(255, 0, 0)",       // Red
-    "rgb(255, 165, 0)",     // Orange
+    "rgb(255, 127, 0)",     // Orange
     "rgb(255, 255, 0)",     // Yellow
-    "rgb(0, 128, 0)",       // Green
+    "rgb(0, 255, 0)",       // Green
     "rgb(0, 0, 255)",       // Blue
     "rgb(75, 0, 130)",      // Indigo
-    "rgb(238, 130, 238)",   // Violet
+    "rgb(148, 0, 211)",     // Violet
 ];
 
 const brushTypes = {
@@ -71,7 +71,6 @@ function applyRainbowColor(pixel) {
     return newColor;
 }
 
-// TODO: Is this necessary?
 function applySolidColor() {}
 
 /**
@@ -86,8 +85,6 @@ function createPixel() {
     return pixel;
 }
 
-// TODO: This should also handle setting the event.target.style.backgroundColor = blah
-// Inside this function should be a switch statement that manages the style
 function setPixelStyle(event) {
     let pixel = event.target;
     let currentStyle = pixel.classList[1];
@@ -101,19 +98,15 @@ function setPixelStyle(event) {
 }
 
 function pixelMouseDown(event) {
-    console.log("pixelMouseDown");
     setPixelStyle(event);
     isDrawing = true;
 }
 
 function pixelMouseOver(event) {
-    console.log("pixelMouseOver");
     if (isDrawing === true) setPixelStyle(event);
 }
 
 function pixelMouseUp(event) {
-    console.log("pixelMouseUp");
-    if (isDrawing === true) setPixelStyle(event);
     isDrawing = false;
 }
 
@@ -133,10 +126,6 @@ function createCanvas(size=16) {
 }
 
 function clearCanvas() {
-    // TODO: Remove the class .pixel-set from setPixelsList
-    // TODO: How do we handle 
-    // const setPixelsList = document.querySelectorAll(".pixel--set");
-
     while (canvas.firstChild) {
         canvas.removeChild(canvas.firstChild);
     }
