@@ -1,6 +1,6 @@
 // GLOBALS
 let isDrawing = false;
-// TODO: setting should maybe be called 
+// TODO: setting should maybe be called
 let brushSetting = "solid";
 let setting = `pixel--${brushSetting}`;
 const rainbowColors = [
@@ -61,7 +61,7 @@ function applyGrayscaleColor(pixel) {
 }
 
 /**
- * https://colorswall.com/palette/102/
+ * https://www.webnots.com/vibgyor-rainbow-color-codes/
  */
 function applyRainbowColor(pixel) {
     let backgroundColor = window.getComputedStyle(pixel).backgroundColor;
@@ -115,19 +115,40 @@ function pixelMouseUp(event) {
  */
 function createCanvas(size=16) {
     clearCanvas();
+    let oldPixelAmount = canvas.childElementCount;
+    let newPixelAmount = Number(size) ** 2;
+
     canvas.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     canvas.style.gridTemplateRows = `repeate(${size}, 1fr)`;
-    for (let h = 0; h < size; h += 1) {
-        for (let w = 0; w < size; w += 1) {
+
+    let delta = newPixelAmount - oldPixelAmount;
+    for (let i = 0; i < Math.abs(delta); i += 1) {
+        if (delta > 0) {
             let pixel = createPixel();
             canvas.appendChild(pixel);
+        } else if (delta < 0) {
+            canvas.removeChild(canvas.lastChild);
         }
     }
 }
 
 function clearCanvas() {
-    while (canvas.firstChild) {
-        canvas.removeChild(canvas.firstChild);
+    const types = [brushTypes.SOLID, brushTypes.GRAYSCALE, brushTypes.RAINBOW];
+    types.forEach(function(type) {
+        clearPixels(type);
+    })
+}
+
+function clearPixels(type) {
+    let pixelType = `pixel--${type}`;
+    let list = document.querySelectorAll(`.${pixelType}`);
+    if (list.length > 0) {
+        list.forEach(function(item) {
+            item.classList.remove(pixelType);
+            if (item.style.backgroundColor !== null) {
+                item.style.backgroundColor = null;
+            }
+        })
     }
 }
 
