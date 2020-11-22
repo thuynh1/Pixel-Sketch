@@ -185,11 +185,4 @@ controlBrushSettings.forEach(function(setting) {
 
 // main()
 createCanvas();
-// TODO: Change controlCanvasSize -> controlCanvasPixelDensity
-// TODO: Add a number to the side of the slider to indicate how many pixesl are going to be drawn
 // TODO: Implement an eraser
-// TODO: Implement different pixel colors. Call it Brush Options
-
-// Optimization
-// TODO: Don't bother clearing out entire canvas, just add or remove the amount of pixels to match the target pixel density
-// Essentially delete all pixels with the pixel--set class

@@ -28,11 +28,9 @@ h1 {
     background-color: rgb(240, 240, 240);
 }
 
-/* TODO: This triggers the window.getComputedStyle(pixel).backgroundColor; */
-/* Should this be removed? */
-/* .pixel:hover {
+.pixel:hover {
     background-color: rgb(100, 100, 100);
-} */
+}
 
 /* Remove me */
 .pixel--set {
