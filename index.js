@@ -41,7 +41,9 @@ function colorSchemeHandler(pixel) {
             style = applyRainbowColor(pixel);
             break;
         case brushTypes.ERASER:
-            style = applyEraser(pixel);
+            if (pixel.classList[1] !== undefined) {
+                pixel.classList.remove(pixel.classList[1]);
+            }
             break;
         case brushTypes.SOLID:
             break;
@@ -71,10 +73,6 @@ function applyRainbowColor(pixel) {
     // Cycle through the array of rainbowColors
     let newColor = rainbowColors[((index + 1) % 7)];
     return newColor;
-}
-
-function applyEraser() {
-    return "rgb(240, 240, 240)";
 }
 
 /**
