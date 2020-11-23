@@ -17,6 +17,7 @@ const brushTypes = {
     SOLID: "solid",
     GRAYSCALE: "grayscale",
     RAINBOW: "rainbow",
+    ERASER: "eraser",
 };
 
 /**
@@ -34,14 +35,16 @@ function setBrushSetting(event) {
 function colorSchemeHandler(pixel) {
     let style = "";
     switch (brushSetting) {
-        case brushTypes.SOLID:
-            style = applySolidColor();
-            break;
         case brushTypes.GRAYSCALE:
             style = applyGrayscaleColor(pixel);
             break;
         case brushTypes.RAINBOW:
             style = applyRainbowColor(pixel);
+            break;
+        case brushTypes.ERASER:
+            style = applyEraser(pixel);
+            break;
+        case brushTypes.SOLID:
             break;
     }
     return style;
@@ -71,7 +74,9 @@ function applyRainbowColor(pixel) {
     return newColor;
 }
 
-function applySolidColor() {}
+function applyEraser() {
+    return "rgb(240, 240, 240)";
+}
 
 /**
  * Pixel
@@ -185,4 +190,3 @@ controlBrushSettings.forEach(function(setting) {
 
 // main()
 createCanvas();
-// TODO: Implement an eraser

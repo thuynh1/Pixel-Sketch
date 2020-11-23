@@ -29,7 +29,7 @@ h1 {
 }
 
 .pixel:hover {
-    background-color: rgb(100, 100, 100);
+    background-color: rgb(216, 216, 216);
 }
 
 /* Remove me */
@@ -47,6 +47,10 @@ h1 {
 
 .pixel--rainbow {
     background-color:rgb(148, 0, 211);
+}
+
+.pixel--eraser {
+    background-color: rgb(240, 240, 240);
 }
 
 .control {
