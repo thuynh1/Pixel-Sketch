@@ -1,6 +1,5 @@
 // GLOBALS
 let isDrawing = false;
-// TODO: setting should maybe be called
 let brushSetting = "solid";
 let setting = `pixel--${brushSetting}`;
 const rainbowColors = [

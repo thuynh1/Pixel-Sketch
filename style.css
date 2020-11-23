@@ -4,9 +4,9 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    border: 2px dashed black;
     font-family: monaco, monospace;
     font-size: 16px;
+    background-color: rgb(214, 171, 171);
 }
 
 h1 {
@@ -15,10 +15,11 @@ h1 {
 
 .canvas {
     display: grid;
-    height: 50vw;
-    width: 50vw;
+    height: 35vw;
+    width: 35vw;
     background-color: white;
-    border: 10px ridge;
+    border: 10px double;
+    border-radius: 6px;
 }
 
 .pixel {
@@ -30,11 +31,6 @@ h1 {
 
 .pixel:hover {
     background-color: rgb(216, 216, 216);
-}
-
-/* Remove me */
-.pixel--set {
-    background-color: black;
 }
 
 .pixel--solid {
@@ -56,13 +52,26 @@ h1 {
 .control {
     margin: 10px;
     padding: 10px;
-    border: 1px solid blue;
 }
 
 .control__canvas-pixel-density {
-    background: #f1f1f1;
+    background: rgb(240, 240, 240);
     outline: none;
     opacity: 0.7;
     -webkit-transition: .5s;
     transition: opacity .2s;
+}
+
+.control__canvas-pixel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.control__canvas-pixel-value {
+    padding-left: 16px;
+}
+
+.control__canvas-clear {
+    font-family: monaco, monospace;
+    font-size: 16px;
 }
