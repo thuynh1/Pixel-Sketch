@@ -1,6 +1,6 @@
-# Etch-a-Sketch
+# Pixel-Sketch
 
-Simple Web Etch-a-Sketch.
+Simple Web Etch-a-Sketch clone!
 
 ## Usage
 Open `index.html` in a Browser (tested on Chrome, Firefox and Safari)
