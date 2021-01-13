@@ -6,27 +6,30 @@ body {
     min-height: 100vh;
     font-family: monaco, monospace;
     font-size: 16px;
-    background-color: rgb(214, 171, 171);
+    background-color: rgb(63, 63, 63);
 }
 
 h1 {
-    font-size: 36px;
+    font-size: 48px;
+    color: rgb(245, 245, 245);
 }
 
 .canvas {
     display: grid;
-    height: 35vw;
-    width: 35vw;
-    background-color: white;
-    border: 10px double;
+    height: auto;
+    min-height: 500px;
+    width: auto;
+    min-width: 500px;
+    background-color: rgb(196, 196, 196);
+    border: 16px double;
     border-radius: 6px;
 }
 
 .pixel {
     height: auto;
     width: auto;
-    border: 1px white solid;
-    background-color: rgb(240, 240, 240);
+    border: 1px rgb(0, 0, 0) solid;
+    background-color: rgb(249, 249, 249);
 }
 
 .pixel:hover {
@@ -49,13 +52,21 @@ h1 {
     background-color: rgb(240, 240, 240);
 }
 
+.control-container {
+    display: flex;
+    flex-direction: row;
+}
+
 .control {
-    margin: 10px;
-    padding: 10px;
+    margin: 0 20px 0 20px;
+    padding: 10px 20px 10px 20px;
+    border: 4px solid;
+    border-radius: 6px;
+    background-color: rgb(237, 237, 237);
 }
 
 .control__canvas-pixel-density {
-    background: rgb(240, 240, 240);
+    background: rgb(255, 255, 255);
     outline: none;
     opacity: 0.7;
     -webkit-transition: .5s;
@@ -74,4 +85,7 @@ h1 {
 .control__canvas-clear {
     font-family: monaco, monospace;
     font-size: 16px;
+    background-color:rgb(200, 200, 200);
+    border: 2px rgb(0, 0, 0) solid;
+    border-radius: 6px;
 }
