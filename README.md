@@ -4,8 +4,10 @@ Simple Web Etch-a-Sketch clone!
 
 ## Usage
 Open `index.html` in a Browser (tested on Chrome, Firefox and Safari)
+
+## Controls
 ### Pixel Density
-Use the Pixel density slider to change the canvas' pixel density. Default is a 16x16 pixel canvas.
+Use the Pixel density slider to change the canvas pixel density. Default is a 16x16 pixel canvas.
 
 ### Brush Settings
 - **Solid**: Draws a solid black colored pixel.
@@ -14,4 +16,4 @@ Use the Pixel density slider to change the canvas' pixel density. Default is a 1
 - **Eraser**: Erase any color applied by the other settings.
 
 ### Reset
-Reset the canvas. *Warning*: Your work of art will not be saved!
+Reset the canvas. *Warning*: Your art work will not be saved!
